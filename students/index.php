@@ -115,8 +115,8 @@ $students = $data->fetchAll(PDO::FETCH_ASSOC);
         <td><?= $item['address'] ?></td>
         <td>
           <button class="btn view">Ko'rish</button>
-          <button class="btn edit">Tahrirlash</button>
-          <button class="btn delete">O'chirish</button>
+          <button  class="btn edit">Tahrirlash</button>
+          <a href="delete.php?id=<?=$item ['id'] ;?>" class=" delete" onclick="return confirm('O\'chirasizmi')">  O'chirish</a>
         </td>
       </tr>
 
