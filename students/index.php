@@ -13,6 +13,7 @@ $data->execute();
 $students = $data->fetchAll(PDO::FETCH_ASSOC);
 
 //$data = $conn->prepare("SELECT*FROM students")->execute()->fetchAll(PDO::FETCH_ASSOC)
+$cnt = 1;
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +44,7 @@ $students = $data->fetchAll(PDO::FETCH_ASSOC);
       border: none;
       padding: 8px 14px;
       border-radius: 6px;
-      cursor: pointer;
+      /* cursor: pointer; */
     }
 
     table {
@@ -53,6 +54,7 @@ $students = $data->fetchAll(PDO::FETCH_ASSOC);
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      color: black;
     }
 
     th, td {
@@ -87,7 +89,6 @@ $students = $data->fetchAll(PDO::FETCH_ASSOC);
   <h2>Studentlar ro'yxati</h2>
 
   <div class="top-bar">
-    <div></div>
     <a href ="create.php" class="add-btn">+ Student qo'shish</button>
   </div>
 
@@ -104,23 +105,23 @@ $students = $data->fetchAll(PDO::FETCH_ASSOC);
       </tr>
     </thead>
     <tbody>
-<!-- BU YERGA DATABESDAN MA'LUMOT KELDI -->
-<?php foreach($students as $item): ?>
-<tr>
-        <td><?= $item['first_name'] ?></td>
-        <td><?= $item['last_name'] ?></td>
-        <td><?= $item['age'] ?></td>
-        <td><?= $item['class_name'] ?></td>
-        <td><?= $item['phone'] ?></td>
-        <td><?= $item['address'] ?></td>
-        <td>
-          <button class="btn view">Ko'rish</button>
-          <button  class="btn edit">Tahrirlash</button>
-          <a href="delete.php?id=<?=$item ['id'] ;?>" class=" delete" onclick="return confirm('O\'chirasizmi')">  O'chirish</a>
-        </td>
-      </tr>
+    <!-- BU YERGA DATABESDAN MA'LUMOT KELDI -->
+      <?php foreach($students as $item): ?>
+      <tr>
+              <td><?= $cnt++; ?></td>
+              <td><?= $item['last_name'] ?></td>
+              <td><?= $item['age'] ?></td>
+              <td><?= $item['class_name'] ?></td>
+              <td><?= $item['phone'] ?></td>
+              <td><?= $item['adress'] ?></td>
+              <td>
+                <a href= >Ko'rish</button>
+                <a href="edit.php?id=<?= $item['id'] ?>"  class="btn edit">Tahrirlash</button>
+                <a href="delete.php?id=<?=$item ['id'] ;?>" class=" delete" onclick="return confirm('O\'chirasizmi')">  O'chirish</a>
+              </td>
+            </tr>
 
-<?php endforeach ;?>
+      <?php endforeach ;?>  
       
     </tbody>
   </table>
