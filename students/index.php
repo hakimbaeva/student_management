@@ -89,7 +89,7 @@ $cnt = 1;
   <h2>Studentlar ro'yxati</h2>
 
   <div class="top-bar">
-    <a href ="create.php" class="add-btn">+ Student qo'shish</button>
+   <a href ="create.php" class="add-btn">+ Student qo'shish</button>
   </div>
 
   <table>
@@ -115,7 +115,7 @@ $cnt = 1;
               <td><?= $item['phone'] ?></td>
               <td><?= $item['adress'] ?></td>
               <td>
-                <a href= >Ko'rish</button>
+                <a href= "show.php?id=<?= $item['id'] ?>" class="view">Ko'rish</button>
                 <a href="edit.php?id=<?= $item['id'] ?>"  class="btn edit">Tahrirlash</button>
                 <a href="delete.php?id=<?=$item ['id'] ;?>" class=" delete" onclick="return confirm('O\'chirasizmi')">  O'chirish</a>
               </td>

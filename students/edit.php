@@ -15,7 +15,7 @@ $students = $data->fetch(PDO::FETCH_ASSOC);
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
-    <title>Studenni tahrirlash</title>
+    <title>Studentni tahrirlash</title>
    <link rel = "stylesheet" href = "../assets/style.css">
 </head>
 <body>
