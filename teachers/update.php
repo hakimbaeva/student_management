@@ -1,34 +1,33 @@
 <?php
-include "../config/db.php";
+include '../config/db.php';
 $id = $_POST['id'];
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
 $age = $_POST['age'];
-$class_name = $_POST['class_name'];
 $phone = $_POST['phone'];
-$adress = $_POST['address'];
+$subject = $_POST['subject'];
+$experience = $_POST['experience'];
 
-$sql = "UPDATE students
+
+$sql = "UPDATE teachers
       SET first_name =?,
       last_name =?,
       age =?,
-      class_name =?,
       phone =?,
-      adress =?
+      subject =?,
+      experience =?
     WHERE id = ?" ;
 
-    $data = $conn->prepare($sql);
+     $data = $conn->prepare($sql);
     $data->execute([
         $first_name,
         $last_name,
         $age,
-        $class_name,
         $phone,
-        $adress,
+        $subject,
+        $experience,
         $id
     ]);
-    
-
-    header("Location: index.php");
+header("Location: index.php");
     exit();
 ?>
