@@ -82,6 +82,7 @@ $cnt = 1;
     .view { background: #2196F3; color: white; }
     .edit { background: #FFC107; color: black; }
     .delete { background: #F44336; color: white; }
+     .menu {background: #e680e7; color: #1a1717;}
   </style>
 </head>
 <body>
@@ -118,6 +119,7 @@ $cnt = 1;
                 <a href= "show.php?id=<?= $item['id'] ?>" class="view">Ko'rish</button>
                 <a href="edit.php?id=<?= $item['id'] ?>"  class="btn edit">Tahrirlash</button>
                 <a href="delete.php?id=<?=$item ['id'] ;?>" class=" delete" onclick="return confirm('O\'chirasizmi')">  O'chirish</a>
+                 <a href="../index.php" class="menu">Menu</a>
               </td>
             </tr>
 

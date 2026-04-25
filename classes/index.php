@@ -1,14 +1,19 @@
+
 <?php
 include '../config/db.php';
 
-$sql = "SELECT * FROM teachers";
+$sql = "SELECT c.id,c.class_name, t.first_name, t.last_name FROM classes c
+INNER JOIN teachers t
+ON c.teachers_id = t.id";
 
 $data = $conn->prepare($sql);
+
 
 $data->execute();
 
 
-$teachers = $data->fetchAll(PDO::FETCH_ASSOC);
+
+$classes = $data->fetchAll(PDO::FETCH_ASSOC);
 
 $cnt = 1;
 ?>
@@ -91,16 +96,16 @@ $cnt = 1;
     .view{ background:#2196F3; color:white; }
     .edit{ background:#FFC107; color:black; }
     .delete{ background:#F44336; color:white; }
-     .menu {background: #e680e7; color: #1a1717;}
+    .menu {background: #e680e7; color: #1a1717;}
   </style>
 </head>
 <body>
 
-  <h2>Teachers jadvali</h2>
+  <h2>Classes jadvali</h2>
 
   <div class="top-bar">
     
-    <a href="create.php" class="add-btn">+ Teacher qo‘shish</a>
+    <a href="create.php" class="add-btn">+ Class qo‘shish</a>
   </div>
 
   <div class="table-container">
@@ -108,64 +113,28 @@ $cnt = 1;
       <thead>
         <tr>
           <th>ID</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Age</th>
-          <th>Phone</th>
-          <th>Subject</th>
-          <th>Experiense</th>
+          <th>Class_name</th>
+          <th>Teacher_id</th>
           <th>Amallar</th>
         </tr>
       </thead>
       <tbody>
-        <?php foreach($teachers as $item) : ?>
+        <?php foreach($classes as $item) : ?>
         <tr>
         
           <td><?= $cnt++; ?></td>
-          <td><?= $item['first_name'] ?></td>
-          <td><?= $item['last_name'] ?></td>
-          <td><?= $item['age'] ?></td>
-          <td><?= $item['phone'] ?></td>
-          <td><?= $item['subject'] ?></td>
-          <td><?= $item['experience'] ?></td>
+          <td><?= $item['class_name'] ?></td>
+          <td><?= $item['first_name'] ." ".$item['last_name'] ?></td>
+         
           <td>
             <a href= "show.php?id=<?= $item['id'] ?>" class="btn view">Ko‘rish</a>
             <a href="edit.php?id=<?= $item['id'] ?>" class="btn edit">Tahrirlash</a>
             <a href="delete.php?id=<?= $item['id'] ?>" class="btn delete" onclick="return confirm('O\'chirasizmi')">O‘chirish</a>
-            <a href="../index.php" menu>Menu</a>
+            <a href="../index.php" class="btn menu">Menu</a>
           </td>
         </tr>
               <?php endforeach  ?>
-<!--         
-        <tr>
-          <td>2</td>
-          <td>Aziza</td>
-          <td>Karimova</td>
-          <td>28</td>
-          <td>+998931112233</td>
-          <td>Ingliz tili</td>
-          <td>5 yil</td>
-          <td>
-            <button class="btn view">Ko‘rish</button>
-            <button class="btn edit">Tahrirlash</button>
-            <button class="btn delete">O‘chirish</button>
-          </td>
-        </tr>
 
-        <tr>
-          <td>3</td>
-          <td>Javlon</td>
-          <td>Qodirov</td>
-          <td>30</td>
-          <td>+998901998877</td>
-          <td>Fizika</td>
-          <td>7 yil</td>
-          <td>
-            <button class="btn view">Ko‘rish</button>
-            <button class="btn edit">Tahrirlash</button>
-            <button class="btn delete">O‘chirish</button>
-          </td>
-         </tr>  -->
       </tbody>
     </table> 
   </div>
