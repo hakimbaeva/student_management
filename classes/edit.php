@@ -9,6 +9,14 @@ $data->execute([':id'=>$id]);
 // $data = $conn->prepare(SELECT * FROM classes WHERE id = :id)
 //     ->execute([':id' =>$id]);
 $classes = $data->fetch(PDO::FETCH_ASSOC);
+
+
+
+$sql = "SELECT * FROM teachers";
+
+$teachers = $conn->prepare($sql);
+$teachers->execute();
+$teachers_list = $teachers->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +36,15 @@ $classes = $data->fetch(PDO::FETCH_ASSOC);
         <input type="text" name="class_name" required value="<?= $classes['class_name'] ?>">
 
         <label>Teacher id (Teacher id)</label>
-        <input type="text" name="teachers_id" required  value="<?= $classes['teachers_id'] ?>">
+         <!-- <input type="text" name="teachers_id" required  value="<?= $classes['teachers_id'] ?>"> -->
 
+           <select name="teachers_id" id="">
+          <?php  foreach($teachers_list as $teachers)  : ?>
+        <option value="<?= $teachers['id'] ?>"> <?= ($classes['teachers_id'] == $teachers['id']) ? "selected" : ""  ?> <?= $teachers['first_name'] ?> <?= $teachers['last_name'] ?> </option>
+        <?php endforeach ?>
+
+        </select>
+       
 
         <button type="submit">Saqlash</button>
     </form>

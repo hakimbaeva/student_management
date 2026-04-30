@@ -1,5 +1,13 @@
 <?php
 include '../config/db.php';
+
+
+$sql = "SELECT c.id,c.class_name, t.first_name, t.last_name FROM classes c
+INNER JOIN teachers t
+ON c.teachers_id = c.id";
+
+
+
 //query-so'rov
 $sql = "SELECT * FROM students";
 
@@ -112,7 +120,7 @@ $cnt = 1;
               <td><?= $cnt++; ?></td>
               <td><?= $item['last_name'] ?></td>
               <td><?= $item['age'] ?></td>
-              <td><?= $item['class_name'] ?></td>
+              <td><?= $item['class_id'] ?></td>
               <td><?= $item['phone'] ?></td>
               <td><?= $item['adress'] ?></td>
               <td>

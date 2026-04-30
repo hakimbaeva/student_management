@@ -102,7 +102,7 @@ $student = $data->fetch()
 
     <div class="info">
         <span class="label">Sinf</span>
-      <?=  $student['class_name'] ?>
+      <?=  $student['class_id'] ?>
     </div>
 
     <div class="info">

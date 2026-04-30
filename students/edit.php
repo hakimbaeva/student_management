@@ -34,7 +34,7 @@ $students = $data->fetch(PDO::FETCH_ASSOC);
         <input type="number" name="age" required  value="<?= $students['age'] ?>">
 
         <label>Sinf (Class Name)</label>
-        <input type="text" name="class_name" required  value="<?= $students['class_name'] ?>">
+        <input type="text" name="class_id" required  value="<?= $students['class_id'] ?>">
 
         <label>Telefon</label>
         <input type="text" name="phone" required  value="<?= $students['phone'] ?>">

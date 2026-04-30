@@ -1,10 +1,10 @@
-<?php
+<!-- <?php
 include "../config/db.php";
 $id = $_POST['id'];
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
 $age = $_POST['age'];
-$class_name = $_POST['class_name'];
+$class_id= $_POST['class_id'];
 $phone = $_POST['phone'];
 $adress = $_POST['address'];
 
@@ -12,17 +12,19 @@ $sql = "UPDATE students
       SET first_name =?,
       last_name =?,
       age =?,
-      class_name =?,
+      class_id =?,
       phone =?,
       adress =?
     WHERE id = ?" ;
+
+
 
     $data = $conn->prepare($sql);
     $data->execute([
         $first_name,
         $last_name,
         $age,
-        $class_name,
+        $class_id,
         $phone,
         $adress,
         $id
@@ -31,4 +33,6 @@ $sql = "UPDATE students
 
     header("Location: index.php");
     exit();
-?>
+    
+
+?> -->
