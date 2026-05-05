@@ -47,7 +47,7 @@ $classes_list = $class->fetchAll(PDO::FETCH_ASSOC);
      <label>class name</label>   
         <select name="class_id" id="">
           <?php  foreach($classes_list as $clases)  : ?>
-        <option value="<?= $clases['id'] ?>"><?= $clases['class_id'] ?> </option>
+        <option value="<?= $clases['id'] ?>"><?= $clases['class_name'] ?> </option>
         <?php endforeach ?> 
 
 

@@ -9,6 +9,13 @@ $data->execute([':id'=>$id]);
 // $data = $conn->prepare(SELECT * FROM students WHERE id = :id)
 //     ->execute([':id' =>$id]);
 $students = $data->fetch(PDO::FETCH_ASSOC);
+
+//***** 
+$sql = "SELECT * FROM classes";
+
+$class = $conn->prepare($sql);
+$class->execute();
+$classes_list = $class->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -34,13 +41,23 @@ $students = $data->fetch(PDO::FETCH_ASSOC);
         <input type="number" name="age" required  value="<?= $students['age'] ?>">
 
         <label>Sinf (Class Name)</label>
-        <input type="text" name="class_id" required  value="<?= $students['class_id'] ?>">
+        <!-- <input type="text" name="class_id" required  value="<?= $students['class_id'] ?>"> -->
 
+        <select name="class_id" id="">
+          <?php  foreach($classes_list as $classes)  : ?>
+        <option value="<?= $classes['id'] ?>" <?= ($students['class_id'] == $classes['id']) ? "selected" : ""  ?> >  <?= $classes['class_name'] ?>   </option>
+        <?php endforeach ?>
+
+        </select>
+       
         <label>Telefon</label>
         <input type="text" name="phone" required  value="<?= $students['phone'] ?>">
 
         <label>Manzil (Address)</label>
         <textarea name="address" required> <?= $students['adress'] ?></textarea>
+
+        
+       
 
         <button type="submit">Saqlash</button>
     </form>
