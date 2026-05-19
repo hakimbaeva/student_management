@@ -118,7 +118,10 @@
     <ul class="menu">
       <li><a href="teachers/index.php">👨‍🏫 Teachers</a></li>
       <li><a href="students/index.php">👨‍🎓 Students</a></li>
-      <li><a href="classes/index.php"> Classes</a></li>
+      <li><a href="classes/index.php">📚 Classes</a></li>
+      <li><a href="books/index.php">📖Books</a></li>
+      <li><a href="orders/index.php">📝 Orders</a></li>
+       <li><a href="order_items/index.php">🧾 Order_items</a></li>
     </ul>
 
     <div class="right">
@@ -129,7 +132,7 @@
 
   <div class="content">
     <h2>👋 Xush kelibsiz</h2>
-    <p>Teachers, Students va Classes sahifalariga menyu orqali o‘ting 🚀</p>
+    <p>Teachers, Students, Classes,Books,Orders va Order_items sahifalariga menyu orqali o‘ting 🚀</p>
   </div>
 
 </body>

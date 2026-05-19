@@ -26,7 +26,7 @@ $students = $data->fetchAll();
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #eef2f7;
+      background: #e5e7e9 ;
       margin: 0;
       padding: 0;
       display: flex;
@@ -36,8 +36,8 @@ $students = $data->fetchAll();
     }
 
     .container {
-      background: #fff;
-      width: 400px;
+      background: #eaebee;
+      width: 510px;
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
@@ -80,13 +80,59 @@ $students = $data->fetchAll();
     }
 
     .back {
-      background: #2196F3;
+      background: #2159f3;
       color: white;
     }
 
     .edit {
       background: #FFC107;
     }
+    table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* header */
+table thead {
+  background: #2159f3;
+  color: white;
+}
+
+table th {
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* body */
+table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+/* zebra effect */
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* hover */
+table tr:hover {
+  background: #e3f2fd;
+  transition: 0.3s;
+}
+
+/* responsive scroll */
+table {
+  display: block;
+  overflow-x: auto;
+}
+    
   </style>
 </head>
 <body>
@@ -103,7 +149,7 @@ $students = $data->fetchAll();
     <div class="item"><span class="label">Teachers Id:</span><?= $class['first_name'] . " ". $class['last_name'] ?><span class="value"></span></div>
     
 
-    <table>
+    <table class= "table">
     <thead>
       <tr>
         <th>First Name</th>

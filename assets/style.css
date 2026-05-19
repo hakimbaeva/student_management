@@ -1,54 +1,102 @@
-  body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-        }
+ body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#0f172a;
+    }
 
-        .container {
-            width: 400px;
-            margin: 50px auto;
-            background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 40px;
+      background:#020617;
+      color:white;
+      box-shadow:0 4px 12px rgba(0,0,0,0.6);
+    }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .logo{
+      font-size:22px;
+      font-weight:bold;
+      color:#e2e8f0;
+    }
 
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
+    .menu{
+      list-style:none;
+      display:flex;
+      gap:30px;
+      margin:0;
+      padding:0;
+    }
 
-        input, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+    .menu li a{
+      text-decoration:none;
+      color:#94a3b8;
+      font-size:15px;
+      position:relative;
+      transition:0.3s;
+    }
 
-        textarea {
-            resize: none;
-            height: 80px;
-        }
+    .menu li a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0%;
+      height:2px;
+      background:#22c55e;
+      transition:0.3s;
+    }
 
-        button {
-            width: 100%;
-            margin-top: 15px;
-            padding: 10px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    .menu li a:hover{
+      color:#ffffff;
+    }
 
-        button:hover {
-            background: #218838;
-        }
-    
+    .menu li a:hover::after{
+      width:100%;
+    }
+
+    .right{
+      display:flex;
+      gap:12px;
+    }
+
+    .btn{
+      border:none;
+      padding:7px 16px;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:14px;
+      transition:0.3s;
+    }
+
+    .login{
+      background:#111827;
+      color:#e5e7eb;
+    }
+
+    .login:hover{
+      background:#1f2937;
+    }
+
+    .signup{
+      background:#22c55e;
+      color:white;
+    }
+
+    .signup:hover{
+      background:#16a34a;
+    }
+
+    .content{
+      padding:60px;
+      text-align:center;
+      color:#e2e8f0;
+    }
+
+    .content h2{
+      color:#ffffff;
+    }
+
+    .content p{
+      color:#94a3b8;
+    }

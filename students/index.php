@@ -30,6 +30,7 @@ $cnt = 1;
   <meta charset="UTF-8">
   <title>Studentlar jadvali</title>
   <style>
+
     body {
       font-family: Arial, sans-serif;
       background: #f5f7fa;
